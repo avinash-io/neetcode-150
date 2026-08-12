@@ -1,5 +1,7 @@
 package arraysandhashing;
 
+import java.util.HashMap;
+
 /**
  * Two Sum
  *
@@ -37,6 +39,20 @@ public class TwoSum {
 
 public int[] solution(int[] nums, int target) {
 	// Your solution
+	HashMap<Integer, Integer> map = new HashMap<>();
+	
+	for (int i = 0; i < nums.length; i++) {
+		
+		int compliment = target - nums[i];
+		
+		if(map.containsKey(compliment)) {
+			return new int[] { map.get(compliment), i};
+		}
+		
+		map.put(nums[i], i);
+		
+	}
+	
 	return new int[]{};
 }
 
