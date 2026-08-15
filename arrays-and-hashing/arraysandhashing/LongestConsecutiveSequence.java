@@ -49,21 +49,20 @@ public int solution(int[] nums) {
 	HashSet<Integer> numSet = new HashSet<>();
 	
 	for(int i=0;i<nums.length;i++){
-		
 		numSet.add(nums[i]);
-		
 	}
 	
 	int longestSub = 1;
 	
-	for(int num:numSet){
-		if(numSet.contains(num - 1)) {
+	for(int num:numSet) {
+		
+		if(numSet.contains(num-1)) {
 			continue;
 		} else {
 			int currentNum = num;
 			int currentSub = 1;
 			
-			while(numSet.contains(currentNum + 1)) {
+			while(numSet.contains(currentNum+1)) {
 				currentNum++;
 				currentSub++;
 			}
@@ -71,6 +70,7 @@ public int solution(int[] nums) {
 			longestSub = Math.max(longestSub, currentSub);
 			
 		}
+		
 		
 	}
 	
